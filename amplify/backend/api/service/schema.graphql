@@ -1,0 +1,24 @@
+type ServiceDB @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  table: String @index(name:"byTable")
+  cognitoIdentityID: ID @index(name:"cognitoID")
+  userName: String
+  calculatedDataValue: Int
+  userActive: Boolean
+  billingID: ID @index(name:"billingID")
+  billingName: String
+  billingActive: Boolean
+  billingOwner:String
+  billingPassword:String
+  lambdaName: String
+  functionId: ID
+  functionName: String
+  groupName: String
+  groupId:String @index(name:"groupId")
+  groupPassword:String
+  groupOwner:String
+  reservationStartTime:String
+  reservationEndTime:String
+  inquiryCategory:String
+  inquiryDetails:String
+}
